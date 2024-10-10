@@ -1,0 +1,50 @@
+﻿/ Joseph Dimartino
+/ Program 0010: Fibonacci 
+/ <9.18.24>
+
+input
+STORE N  / example 5 
+
+skipcond 400  / if N = 0
+jump ifN1
+jump outputX  / handle if initial input is 0
+
+ifN1, subt O  / handle if initial input is 1
+	skipcond 400
+    jump addNums
+    Load X
+    add O
+    store X
+    jump outputX
+
+/ let Z be the previous position
+/ Y be the position before Z, add them together to get X
+addNums, Load X 
+Store Z
+Load Z
+Add Y  
+Store X 
+Load Z
+Store Y
+Load C
+Add O
+Store C
+jump checkDone
+
+checkDone, subt N  / keep looping addNums until Counter (C) is 0 
+	skipcond 400
+    jump addNums
+	jump outputX
+    
+outputX, load X  / output 
+output
+
+HALT  / Terminate program
+
+N, dec 0  / this will be the input value
+X, dec 0  / this will start at 0 and be the output of the current place
+Y, dec 1 
+Z, dec 0
+C, dec 1  / Counter for the places
+O, dec 1 / O meaning add One 
+
