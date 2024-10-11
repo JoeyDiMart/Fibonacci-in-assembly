@@ -1,5 +1,4 @@
-﻿/ Joseph Dimartino
-/ Program 0010: Fibonacci 
+/ Joseph DiMartino
 / <9.18.24>
 
 input
